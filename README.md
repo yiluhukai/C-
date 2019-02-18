@@ -21,6 +21,8 @@ cd - 返回用户上次所以在目录。
 man man/ls等
 man 还可用来查看库函数
 man 3(章节，1代表的是shell指令) printf
+man -M：指定手册文件的搜索路径，有的时候我们自己安装的软件是带有自己的帮助文件的，通常不在我们的MANPATH 里面，那么我们就可以手动指定man搜索的文件路径。
+如 man -M /home/mysql/man mysql
 ```
 
 ## tar 解压或者压缩文件
@@ -178,7 +180,7 @@ man ascii;
 可以在char中存放int类型（0-127）；
 ```
 
-demo02/uc.c:在char中存放超过范围的整形数字。
+demo02/uc.c  :在char中存放超过范围的整形数字。
 
 ## 进制转换
 
@@ -201,3 +203,5 @@ printf=print formmat;
 ```
 
 demo03/02_printf.c  格式化输出变量。
+demo03/03_scanf.c   接受用户的输入并打印变量的值
+demo03/big2low.c    将用户输入的大写字符转化成小写
