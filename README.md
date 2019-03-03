@@ -205,3 +205,12 @@ printf=print formmat;
 demo03/02_printf.c  格式化输出变量。
 demo03/03_scanf.c   接受用户的输入并打印变量的值
 demo03/big2low.c    将用户输入的大写字符转化成小写
+demo03/area.c       用户输入矩形的长和宽，计算出矩形的面积
+demo03/04_add.c     计算两个数的和
+demo03/05_var.c     C语言中如何存一个负数的
+
+## sizdeof运算符
+sizeof(int)
+sizeof(i)
+sizeof(3.14)
+
