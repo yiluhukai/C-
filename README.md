@@ -38,7 +38,7 @@ man -M：指定手册文件的搜索路径，有的时候我们自己安装的�
 ```text
 1. 使用tab键补全命令或者文件
 2. 使用history查看使用过的命令， history -c清除历史。
-3.快速打开终端 shift+control+t
+3.快速打开终端 shift+alt+t
 alt+数字 切换终端
 4.control+c 终止当前的命令的执行或废除已经输入的命令。
 5.which 命令 :查看命令存在那个目录下
@@ -286,4 +286,12 @@ demo04/year.c
 
 ## 流程控制语句
 
-demo05/
+1.if、else语句
+2.for循环
+特例：死循环
+```c
+	for(;;)
+```
+3、break和continue
+demo05/03_tinary.c 计算一个整形中包含的2进制1的个数
+demo05/05_rand.c 生成随机数
