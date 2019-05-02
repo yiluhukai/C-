@@ -285,17 +285,23 @@ demo04/year.c
 
 ## 流程控制语句
 
-1.if、else语句
-2.for循环
-特例：死循环
+1. if、else语句
+2. for循环
+ 特例：死循环
 ```c
 	for(;;)
 ```
-3、break和continue
+3. break和continue
 
-4.goto语句
+4. goto语句
 
 	goto语句可以用来跳出双重for循环。
+5. 输入输出缓存区
+	
+6. 数组
+	1.内存中连续的大小为某一类型的空间。
+	2.数组的声明 int a[10]
+
 
 demo05/03_tinary.c 计算一个整形中包含的2进制1的个数
 demo05/05_rand.c 生成随机数
@@ -303,4 +309,5 @@ demo05/06_9*9.c 99乘法表
 demo05/07_for_2.c  双重for循环解决鸡兔同笼的问题
 demo05/08_do_while.c do——while循环
 demo05/09_goto.c  使用goto语句和if语句实现循环
-demo05/10_buff.c  清理缓存区
+demo05/10_buff.c  清理输出缓存区
+demo05/11_scanf.c  清理输入缓存区
