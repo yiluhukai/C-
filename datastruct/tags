@@ -1,0 +1,33 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Node	lickstruct_02.c	/^}Node;$/;"	t	typeref:struct:node	file:
+Node	linkstruct_01.c	/^}Node;$/;"	t	typeref:struct:node	file:
+Stack	stack.h	/^}Stack;$/;"	t	typeref:struct:__anon2
+__STACK__H__	stack.h	2;"	d
+bool	stack.h	/^}bool;$/;"	t	typeref:enum:__anon1
+clearStack	stack.c	/^void clearStack(Stack* stack){$/;"	f
+false	stack.h	/^	false,$/;"	e	enum:__anon1
+initStack	stack.c	/^void initStack(Stack* stack){$/;"	f
+main	lickstruct_02.c	/^int main(){$/;"	f
+main	linkstruct_01.c	/^int main(){$/;"	f
+main	stack_main.c	/^int main(){$/;"	f
+next	lickstruct_02.c	/^	struct node * next;$/;"	m	struct:node	typeref:struct:node::node	file:
+next	linkstruct_01.c	/^	struct node * next;$/;"	m	struct:node	typeref:struct:node::node	file:
+node	lickstruct_02.c	/^typedef struct node{$/;"	s	file:
+node	linkstruct_01.c	/^typedef struct node{$/;"	s	file:
+num	lickstruct_02.c	/^	int num;$/;"	m	struct:node	file:
+num	linkstruct_01.c	/^	int num;$/;"	m	struct:node	file:
+printfNode	linkstruct_01.c	/^void printfNode(Node* n){$/;"	f
+size	stack.h	/^	int size; \/\/指定栈里面的元素的个数；同时可以用来计算栈中的最后一个元素$/;"	m	struct:__anon2
+stack	stack.h	/^	int stack[Max];$/;"	m	struct:__anon2
+stackIsEmpty	stack.c	/^bool stackIsEmpty(const Stack * stack){$/;"	f
+stackIsFull	stack.c	/^bool stackIsFull(const Stack* stack ){$/;"	f
+stackPop	stack.c	/^bool stackPop(Stack* stack,int *val){	$/;"	f
+stackPush	stack.c	/^bool stackPush(Stack * stack,int val){$/;"	f
+stackSize	stack.c	/^int stackSize(const Stack* stack){$/;"	f
+stackTop	stack.c	/^bool stackTop(const Stack * stack,int *val){$/;"	f
+true	stack.h	/^	true$/;"	e	enum:__anon1
