@@ -1,19 +1,6 @@
 //实现一颗二叉树
 #include <stdlib.h>
-#include <stdio.h>
-//定义二叉树的结构
-struct node;
-
-typedef struct {
-	struct node* p_node;  
-}tree;
-
-typedef struct node{
-	int data;
-	tree left;
-	tree right;	
-	
-}node;
+#include "tree_02.h"	
 
 //初始化二叉树
 //为什么要穿指针呢 ？因为结构体是值传递，只传入结构体的化，修改结构体中指针的指向不会影响原来的结构体
@@ -92,18 +79,5 @@ void tree_miter(const tree * T,void (*p_func)(int)){
 		
 }
 
-void show(int val){
-	printf("%d\n",val);
-}
 
-int main(){
-	tree T = {0};
-        tree_init(&T);
-	tree_insert(&T,10);
-	tree_insert(&T,10);
-	tree_insert(&T,6);
-	tree_insert(&T,1);
-	tree_miter(&T,show);
-	return 0;	
 
-}
