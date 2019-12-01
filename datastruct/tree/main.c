@@ -11,11 +11,17 @@ int main(){
 	tree_insert(&T,10);
 	tree_insert(&T,10);
 	tree_insert(&T,6);
+	tree_insert(&T,-1);
+	tree_insert(&T,-12);
 	tree_insert(&T,1);
 	tree_insert(&T,20);
 	tree_insert(&T,0);
 	tree_insert(&T,9);
 	tree_insert(&T,11);
+	tree_miter(&T,show);
+	printf("\n");
+	tree_remove(&T,6);
+	tree_remove(&T,20);
 	tree_miter(&T,show);
 	printf("\n");
 	return 0;	

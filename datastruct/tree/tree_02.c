@@ -79,5 +79,41 @@ void tree_miter(const tree * T,void (*p_func)(int)){
 		
 }
 
+// 删除树中的某个结点，当该值在树中不存在的时候返回0
+//
+
+int tree_remove(tree * T,int val){
+	//先查找要删除的结点的位置
+	tree* node_temp = search(T,val);
+	// 保存要删除的结点的指针
+	node* remove_node = node_temp->p_node; 
+	if(!remove_node){
+		return 0;
+	}
+	//代表要删除的结点已经存在,会有四种情况“
+	// 1.要删除的结点没有左子树
+	if(!remove_node->left.p_node &&  !remove_node->right.p_node){
+		//直接删除并释放当前指针
+		node_temp->p_node =NULL;
+	}else if(!remove_node->right.p_node){
+		//只有左子树
+		node_temp->p_node = remove_node->left.p_node;
+	}else if(!remove_node->left.p_node){
+		// 只有右子树
+		node_temp->p_node = remove_node->right.p_node;
+	}else{
+		// 左子树和右子树同时存在
+		// 这种情况比较复杂，需要将当前要删除结点的左右子树合成一棵树
+		// 合成方法有两种：1.将要删除结点的左子树的最右边的结点的右指针指向左子树的跟结点
+		// 2. 将要删除结点的右子树的最左边的结点左子树指向左子树。 
+		//  原理：当前结点的左子树的最大结点是最左的结点，二子树的结点是大于删除结点的值的 。
+		tree * p_temp1 = search(&(remove_node->left),remove_node->right.p_node->data);
+		p_temp1->p_node =remove_node->right.p_node;
+		node_temp->p_node = remove_node->left.p_node;
+	}
+	// 最终释放要删除的结点
+	free(remove_node);
+	return 1;
+}
 
 

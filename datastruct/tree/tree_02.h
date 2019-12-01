@@ -28,6 +28,8 @@ void tree_clear(tree * T);
 //在有序二叉树中插入结点
 
 int tree_insert(tree* T,int val);
+// 中序遍历有序树
 void tree_miter(const tree * T,void (*p_func)(int));
 
+int tree_remove(tree * T,int val);
 #endif
