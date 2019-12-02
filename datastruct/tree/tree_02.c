@@ -115,5 +115,26 @@ int tree_remove(tree * T,int val){
 	free(remove_node);
 	return 1;
 }
+//获取树的高度
+// 因为树的左子树和右子树也是一棵树，所以可以使用递归来实现
+int tree_height(const tree* T){
+	if(!T->p_node){
+		return 0;
+	}
+	//树有结点
+	int left_height = tree_height(&(T->p_node->left));
+	int right_height = tree_height(&(T->p_node->right));
+	return (left_height>right_height?left_height:right_height)+1;
+}
 
-
+// 获取树的结点的个数
+//
+int tree_count(const tree* T){
+	if(!T->p_node){
+		return 0;
+	}
+	//结点存在
+	int left_count = tree_count( &(T->p_node->left));
+	int right_count =  tree_count(&(T->p_node->right));
+	return left_count + right_count + 1;
+}

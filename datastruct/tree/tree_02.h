@@ -32,4 +32,7 @@ int tree_insert(tree* T,int val);
 void tree_miter(const tree * T,void (*p_func)(int));
 
 int tree_remove(tree * T,int val);
+int tree_height(const tree* T);
+// 获取结点的个数
+int tree_count(const tree* T);
 #endif

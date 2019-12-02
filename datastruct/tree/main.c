@@ -24,6 +24,10 @@ int main(){
 	tree_remove(&T,20);
 	tree_miter(&T,show);
 	printf("\n");
+	int height =  tree_height(&T);
+	printf("height=%d\n",height);
+	int count = tree_count(&T);
+	printf("count = %d\n",count);
 	return 0;	
 
 }
