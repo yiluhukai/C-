@@ -8,25 +8,13 @@
  *
  *
  */
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <unistd.h>
-#include <stdio.h>
-#include <sys/types.h> 
-#include <pwd.h> 
-#include <grp.h> 
-#include <time.h>
+#include "t_ls.h"
 void printf_mode(struct stat st,unsigned int mask_value,char*  c){
 	char * mode =  st.st_mode & mask_value ? c :"-";
 	printf("%s",mode);	
 }
-
-int main(int argc,char * argv[]){
-	if(argc != 3 ){
-		printf("invlid args\n");
-		return -1;
-	}
-	char * path =argv[2];
+// 0代表打印成功 ，其他代表失败
+int printf_all_meta_message(char * path){
 	struct stat st;
 	if(stat(path, &st)==-1){
 		perror("stat");

@@ -5,13 +5,7 @@
  *
  *
  * */
-#include <stdio.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <unistd.h>
-#include <pwd.h>
-#include <grp.h>
-#include <time.h>
+#include "file_message.h"
 int main (int argc,char* argv[]){
 	const char* path = (const char *)argv[1];
 	struct stat st;
