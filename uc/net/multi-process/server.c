@@ -10,8 +10,16 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <stdlib.h>
-int main(){
+#include <signal.h>
+void handle_child(int signal_num){
+	// 对子进程的资源进行回收
+	printf("signal_num:%d\n",signal_num);
+	wait(NULL);
+}
 
+int main(){
+	// 处理子进程结束的信号
+	signal(SIGCHLD,handle_child);
 	// 接受客户端socket的addr
 	ipv4_addr client;
 	socklen_t addrlen =(socklen_t)sizeof(client);
@@ -29,7 +37,7 @@ int main(){
 		perror("listen");
 		return -1;
 	}
-	//  
+	
 	printf("listen successfully\n");
 	while(1){
 	 	// 当未决队列为空时，处于阻塞状态，
@@ -60,8 +68,10 @@ int main(){
 
 		}else{
 			close(cfd);
-			//  非阻塞等待
-			waitpid(-1,NULL,WNOHANG);	
+			//  非阻塞等待,但是有可能等不到子进程退出自己先返回了：这时候会产生僵尸进程
+			//waitpid(-1,NULL,WNOHANG);	
+			//更好的办法是父进程上注册一个信号处理函数，当子进程终止时给父进程发送一个信号，触发信号处理函数去处理这个
+
 		}
 
 	
